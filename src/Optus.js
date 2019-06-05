@@ -67,8 +67,7 @@ class Optus extends Component {
         return(
             <div className="OptusTable">
                 <div className="statsTable">    
-                    <p>limit is: {limit}</p>
-                    <p>Bars are {bars.toString()}</p>
+                    <p>LIMIT: {limit} <br></br> BARS: {bars.toString()}</p>
                     
                 </div>
                 <div className="barTable">
