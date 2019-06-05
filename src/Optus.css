@@ -1,0 +1,81 @@
+.loader {
+    justify-content: center;
+    display: grid;
+    margin: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.OptusTable{
+    margin: 100px auto 100px auto;
+    width: 80%;
+    position:center; 
+}
+
+.statsTable {
+    margin: 20px;
+}
+
+.barTable {
+    max-width: 800px;
+    position: relative; 
+    margin: 20px;
+}
+
+.percentage {
+    position: absolute; 
+    text-align: center;
+    width: 100%;
+}
+
+.bar {
+    cursor: pointer;
+    padding: 2px;
+    margin: 2px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: auto;
+    min-width: 200px;
+    height: 20px;
+    text-align: center;
+}
+
+.bar:hover{
+    box-shadow: 0 12px 12px 0 rgba(0,0,0,0.24), 0 17px 20px 0 rgba(0,0,0,0.19); 
+    background-color: rgb(255, 254, 170); 
+}
+
+.filler {
+    border-radius: inherit;
+    background: rgb(26, 189, 230);
+    height: 100%;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.ButtonRow{
+    max-width: 800px;
+    margin: 20px;
+    text-align: center;
+    overflow: auto;
+}
+
+button {
+    background-color:  transparent;
+    border: 3px solid #0099CC;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin: 2px;
+    min-width: 80px;
+    padding: 10px; 
+    display: inline-block；
+}
+
+button:hover{
+    background: rgb(255, 254, 170); 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
+}
