@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="loader"
+>
+  <Loader
+    color="#00BFFF"
+    height="100"
+    type="Puff"
+    width="100"
+  />
+  <p>
+     LOADING 
+  </p>
+</div>
+`;

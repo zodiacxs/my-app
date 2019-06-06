@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import './Optus.css';
 import Loader from 'react-loader-spinner'
-import ProgressBar from './ProgressBar'
+import {
+    TheLoader,
+    OptusTable,
+    StatsSection,
+    BarSection,
+    Bar,
+    CoolFiller,
+    Percentage,
+    ButtonSection,
+    NiceButton,
+} from "./StyledComp"
 
 const endpoint = 'http://pb-api.herokuapp.com/bars';
 
-class Optus extends Component {
+export default class Optus extends Component {
 
     constructor(props){
         super(props);
@@ -57,41 +66,58 @@ class Optus extends Component {
 
         if(isloading){
             return (
-                <div className="loader">
-                    <Loader type="Puff" color="#00BFFF" height="100" width="100"/>
+                <TheLoader>
+                    <Loader type="Puff" color="#00BFFF" height="200" width="200"/>
                     <p> LOADING </p>
-                </div>
+                </TheLoader>
             );
         }
 
         return(
-            <div className="OptusTable">
-                <div className="statsTable">    
+            <OptusTable>
+                <StatsSection>
                     <p>LIMIT: {limit} <br></br> BARS: {bars.toString()}</p>
-                    
-                </div>
-                <div className="barTable">
+                </StatsSection>
+                <BarSection>
                     {bars.map ((bar, index) =>
                         <ProgressBar
                             key = {index}
                             isActive = {(active+1)/(index+1)}
-                            percentage = {Math.round(bar/limit*100)}
+                            percentage = {Math.floor(bar/limit*100)}
                             onBarClick={this.handleBarClick.bind(null, index)}
                         />
                     )}
-                </div>
-                <div className="ButtonRow">
+                </BarSection>
+                <ButtonSection>
                     {buttons.map((button) =>
-                        <button key={button*100} onClick={(e) => this.UpdateProgress(button)}>
+                        <NiceButton key={button*100} onClick={(e) => this.UpdateProgress(button)}>
                             {button}
-                        </button>
+                        </NiceButton>
                         
                     )}
-                </div>
-            </div>
+                </ButtonSection>
+            </OptusTable>
         )
-
     }
 }
 
-export default Optus;
+const ProgressBar = (props) => {
+    let percentage = props.percentage;
+    if (props.percentage > 100) {percentage = 100;}
+
+    return(
+        <Bar className={props.isActive===1 ? "bar active":"bar"} onClick={props.onBarClick}>
+            <Percentage>{percentage}% </Percentage>
+            <Filler percentage={percentage}/>
+        </Bar>
+    )
+}
+
+const Filler = (props) => {
+    return (
+        <CoolFiller 
+            className={props.percentage===100? "filler full":"filler"} 
+            style={{ width: `${props.percentage}%`}}
+        />
+    )
+}
