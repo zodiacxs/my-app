@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loader from 'react-loader-spinner'
 import {
-    TheLoader,
+    Loading,
     OptusTable,
     StatsSection,
     BarSection,
@@ -66,10 +66,15 @@ export default class Optus extends Component {
 
         if(isloading){
             return (
-                <TheLoader>
-                    <Loader type="Puff" color="#00BFFF" height="200" width="200"/>
-                    <p> LOADING </p>
-                </TheLoader>
+                <Loading>
+                    <Loader 
+                        type="Puff"
+                        color="#00BFFF"
+                        height="200"
+                        width="200"
+                    />
+                    <strong>LOADING</strong>
+                </Loading>    
             );
         }
 

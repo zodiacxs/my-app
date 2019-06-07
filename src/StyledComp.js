@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TheLoader = styled.div`
+const Loading = styled.div`
     justify-content: center;
     position: relative;
     display: grid;
@@ -96,4 +96,4 @@ const NiceButton = styled.button`
 
 
 
-export {TheLoader, OptusTable, StatsSection, BarSection, Bar, CoolFiller,Percentage, ButtonSection, NiceButton};
+export {Loading, OptusTable, StatsSection, BarSection, Bar, CoolFiller,Percentage, ButtonSection, NiceButton};
